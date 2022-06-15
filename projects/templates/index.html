@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Projects || Home</title>{% endblock %}
+{% block content %}
+  <h1>Projects Home</h1>
+  <p>Welcome to Projects, <em>This is my new kind of network</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Projects:</strong> {{ num_projects }}</li>
+    <li><strong>Owners:</strong> {{ num_owners }}</li>
+  </ul>
+  <footer>
+    <h3>You've visited this site: <strong>{{ num_visits }}</strong></h3>
+  </footer>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Name: {{ project.name }}</h1>
+
+  <p><strong>Owner:</strong> <a href="{{ project.owner.get_absolute_url }}">{{ project.owner }}</a></p>
+  <p><strong>Description:</strong> {{ project.description }}</p>
+  <p><strong>Languages:</strong> {{ project.languages.all|join:", " }}</p>
+  <p><strong>Technologies:</strong> {{ project.technologies.all|join:", " }}</p>
+{% endblock %}

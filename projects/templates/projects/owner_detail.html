@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Name: {{ owner.full_name }}"{{ owner.nickname }}"</h1>
+
+<p><strong>Here since:</strong>{{ owner.date_of_registry }}</p>
+
+{% for project in owner.project_set.all %}
+<hr>
+<p><strong>Project:</strong><a href="{{ project.get_absolute_url }}">{{ project.name }}</a></p>
+<p><strong>Description:</strong> {{ project.description }}</p>
+<p class="text-muted"><strong>Technologies:</strong> {{ project.technologies.all|join:", " }}</p>
+{% endfor %}
+{% endblock %}
